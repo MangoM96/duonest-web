@@ -2,6 +2,7 @@
 
 :root {
   --sage: #6B7F5E;
+  --sage-logo: #6B7F5E;
   --sage-600: #5C6B50;
   --sage-700: #4A5741;
   --sand: #D4A574;
@@ -75,9 +76,13 @@ a:hover {
 }
 
 .wordmark svg {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   flex: none;
+}
+
+.wordmark .logo-blend {
+  mix-blend-mode: multiply;
 }
 
 .site-header nav {
@@ -203,6 +208,7 @@ footer .spacer {
     --border: rgba(241, 239, 233, 0.12);
     --border-soft: rgba(241, 239, 233, 0.08);
     --sand: #E0B689;
+    --sage-logo: #8CA07D;
   }
 
   a {
@@ -212,5 +218,9 @@ footer .spacer {
 
   .site-header nav a:hover {
     color: #A9C29B;
+  }
+
+  .wordmark .logo-blend {
+    mix-blend-mode: normal;
   }
 }
