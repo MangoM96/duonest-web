@@ -425,40 +425,41 @@ footer .spacer {
 
 /* Phone mock */
 
+/* Echter Geräterahmen (freies iPhone-15-Pro-Mockup, transparenter
+   Screen-Ausschnitt) statt CSS-Nachbau -- Quelle: webmobilefirst.com,
+   kommerziell nutzbar ohne Zuschreibung. Der Screenshot liegt als
+   eigenes, absolut positioniertes Element GENAU im transparenten
+   Ausschnitt darunter, der Rahmen liegt als Bild obendrauf. */
 .phone-frame {
   flex: none;
-  width: 300px;
-  height: 612px;
-  padding: 14px;
-  background: linear-gradient(165deg, #3a3b35, #1c1d19);
-  border-radius: 52px;
-  box-shadow:
-    0 40px 80px -30px rgba(42, 43, 38, 0.45),
-    inset 0 0 0 1.5px rgba(255, 255, 255, 0.08);
+  width: 280px;
+  aspect-ratio: 391 / 800;
   position: relative;
+  filter: drop-shadow(0 40px 70px rgba(42, 43, 38, 0.4));
 }
 
-.phone-frame::before {
-  /* Seitentaste, rein dekorativ */
-  content: "";
+.phone-bezel {
   position: absolute;
-  right: -2px;
-  top: 130px;
-  width: 3px;
-  height: 70px;
-  background: #171815;
-  border-radius: 0 2px 2px 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  display: block;
 }
 
 .phone-screen {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  left: 4.86%;
+  top: 1.875%;
+  width: 90.54%;
+  height: 96.25%;
   background: var(--bg);
-  border-radius: 38px;
+  border-radius: 28px;
   overflow: hidden;
-  position: relative;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 .phone-status {
@@ -467,8 +468,7 @@ footer .spacer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 22px;
-  position: relative;
+  padding: 0 22px 0 24px;
 }
 
 .phone-time {
@@ -476,17 +476,6 @@ footer .spacer {
   font-weight: 600;
   font-size: 13px;
   color: var(--ink);
-}
-
-.phone-island {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 76px;
-  height: 21px;
-  border-radius: 999px;
-  background: #171815;
 }
 
 .phone-battery {
@@ -995,9 +984,7 @@ footer .spacer {
 
   .phone-frame {
     width: 100%;
-    max-width: 320px;
-    height: auto;
-    aspect-ratio: 300 / 612;
+    max-width: 300px;
     margin: 0 auto;
   }
 
