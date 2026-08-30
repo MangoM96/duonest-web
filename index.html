@@ -3,11 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Duonest</title>
-<meta name="description" content="Duonest — die App für die mentale Last, die eine Familie gemeinsam trägt.">
+<title>Duonest — Mentale Last, ruhig geteilt</title>
+<meta name="description" content="Duonest hilft Paaren und Familien, mentale Last per Sprachmemo festzuhalten, in Ruhe zu sortieren und bewusst zu teilen. Ohne Punkte, ohne Vergleich.">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body>
+<body class="landing">
+
+<!-- Icon-Sprite: einmal definiert, per <use> referenziert. Handgezeichnet
+     im Lucide-Stil (Stroke, 2px, runde Kappen) statt einer externen
+     Icon-Bibliothek/CDN, damit die Seite komplett eigenständig bleibt. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-play-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="10,8.3 10,15.7 16.5,12" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-apple" viewBox="0 0 24 24"><path d="M12 21c-3.5 0-6-3.5-6-7.5S8 8 10.5 8c.7 0 1 .3 1.5.3s.8-.3 1.5-.3C16 8 18 9.8 18 13.5S15.5 21 12 21z"/><path d="M12 8c0-1.5.8-2.5 2-3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3 21 8 12 13 3 8Z"/><path d="M3 14l9 5 9-5" fill="none"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.3"/><path d="M15.3 14.2A4.5 4.5 0 0 1 21 18.5"/></symbol>
+    <symbol id="i-wifi-off" viewBox="0 0 24 24"><line x1="2" y1="2" x2="22" y2="22"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 13a10 10 0 0 1 5.3-3.4"/><path d="M13.6 9.5A10 10 0 0 1 19 13"/><path d="M2 8.5a15 15 0 0 1 4.5-3"/><path d="M17.5 5.5A15 15 0 0 1 22 8.5"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><polyline points="9,12 11,14 15,10"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.5-8.5C.8 8.2 2.3 5 5.5 5c1.9 0 3.3 1 4.5 2.4C11.2 6 12.6 5 14.5 5 17.7 5 19.2 8.2 21.5 11.5 19 15.6 12 20 12 20z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M4 20c8 0 16-4 16-16-8 0-16 4-16 16z"/><line x1="4" y1="20" x2="14" y2="10"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="4,12 9,17 20,6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></symbol>
+  </defs>
+</svg>
 
 <header class="site-header">
   <a class="wordmark" href="/">
@@ -17,36 +41,326 @@
         <g transform="translate(12,2) rotate(12 13 13)"><path class="logo-blend" d="M16,0 H19 A7,7 0 0 1 26,7 V19 A7,7 0 0 1 19,26 H7 A7,7 0 0 1 0,19 V16 A16,16 0 0 1 16,0 Z" fill="var(--sand)"/></g>
       </g>
     </svg>
-    Duonest
+    duonest
   </a>
   <nav>
-    <a href="/impressum/">Impressum</a>
-    <a href="/datenschutz/">Datenschutz</a>
+    <a href="#wie-es-funktioniert">Wie es funktioniert</a>
+    <a href="#fuer-euch">Für wen</a>
+    <a href="#preise">Preise</a>
+    <a href="#fachleute">Für Fachleute</a>
+    <a class="btn btn-primary" href="#preise">Kostenlos starten</a>
   </nav>
 </header>
 
 <main>
-  <div style="padding: 72px 0 96px; max-width: 560px;">
-    <h1 style="font-family: var(--font-display); font-weight: 800; font-size: 34px; letter-spacing: -0.5px; line-height: 1.15; margin: 0 0 20px;">
-      Ein Zuhause für alles, was ihr im Kopf mit euch herumtragt.
-    </h1>
-    <p style="color: var(--ink-2); font-size: 17px; line-height: 1.55; margin: 0 0 32px;">
-      Duonest ist eine App für Paare und Familien, um Gedanken, Aufgaben und
-      Sorgen erst für sich selbst festzuhalten — und erst dann zu teilen,
-      wenn's dran ist. Wir bauen gerade an ihr.
-    </p>
-    <p style="color: var(--muted); font-size: 15px;">
-      Fragen schon jetzt gern an
-      <a href="mailto:hallo@duonest.de">hallo@duonest.de</a>.
-    </p>
-  </div>
+
+  <!-- HERO -->
+  <section class="landing-section hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="badge"><span class="dot"></span>Local-first · verschlüsselt · bewertungsfrei</span>
+        <h1>Was alles in deinem Kopf ist, muss nicht dort bleiben.</h1>
+        <p>Duonest hilft Paaren und Familien, mentale Last per Sprachmemo festzuhalten, in Ruhe zu sortieren und <strong>bewusst</strong> zu teilen. Ohne Punkte, ohne Vergleich.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#preise">Kostenlos starten</a>
+          <a class="btn btn-secondary" href="#wie-es-funktioniert"><svg class="icon"><use href="#i-play-circle"/></svg>Wie es funktioniert</a>
+        </div>
+        <div class="store-badges">
+          <span class="store-badge"><svg class="icon"><use href="#i-apple"/></svg><span class="lines"><span class="top">Bald im</span><span class="bottom">App Store</span></span></span>
+          <span class="store-badge"><svg class="icon"><use href="#i-play"/></svg><span class="lines"><span class="top">Bald bei</span><span class="bottom">Google Play</span></span></span>
+        </div>
+        <p class="hero-note">Kostenlos für dich allein — kein Familien-Konto nötig zum Ausprobieren.</p>
+      </div>
+
+      <div class="phone" aria-hidden="true">
+        <div class="phone-top">
+          <p class="greet">Hallo, Lena</p>
+          <h3>Mein Stapel</h3>
+        </div>
+        <div class="phone-cards">
+          <div class="phone-card type-task">
+            <span class="type"><span class="dot"></span>Aufgabe</span>
+            <p>Zahnarzttermin für die Kinder ausmachen</p>
+          </div>
+          <div class="phone-card type-talk">
+            <span class="type"><span class="dot"></span>Gespräch</span>
+            <p>Mit Jonas über den Sommerurlaub sprechen</p>
+          </div>
+          <div class="phone-card type-thought">
+            <span class="type"><span class="dot"></span>Gedanke</span>
+            <p>Sonntags feste ruhige Zeit einplanen.</p>
+          </div>
+        </div>
+        <div class="phone-mic"><svg class="icon"><use href="#i-mic"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPATHY -->
+  <section class="landing-section tint" id="fuer-euch">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Die Last, die niemand sieht</h2>
+        <p>Termine, Besorgungen, kleine Sorgen — das ständige Mitdenken kostet Kraft und wird selten geteilt. Duonest gibt diesen Gedanken einen Ort, bevor sie zur Belastung werden.</p>
+      </div>
+      <div class="chip-row">
+        <span class="chip">Wer macht den Zahnarzttermin?</span>
+        <span class="chip">Geschenk für Omas Geburtstag?</span>
+        <span class="chip">Elternabend am 14.</span>
+        <span class="chip">Winterjacken aus dem Keller</span>
+        <span class="chip">Kita-Beitrag überweisen</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="landing-section" id="wie-es-funktioniert">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">So funktioniert's</span>
+        <h2>Aussprechen. Sortieren. Bewusst teilen.</h2>
+      </div>
+      <div class="step-grid">
+        <div class="step-card">
+          <div class="icon-tile"><svg class="icon"><use href="#i-mic"/></svg></div>
+          <p class="step-label">Schritt 1</p>
+          <h3>Aussprechen</h3>
+          <p>Sprich einfach aus, was dir durch den Kopf geht. Wird direkt auf deinem Gerät in Text umgewandelt — oder tipp es kurz.</p>
+        </div>
+        <div class="step-card">
+          <div class="icon-tile"><svg class="icon"><use href="#i-layers"/></svg></div>
+          <p class="step-label">Schritt 2</p>
+          <h3>Sortieren</h3>
+          <p>Ordne in deinem privaten Stapel: behalten, selbst erledigen oder für die Familie vormerken. Nur für dich sichtbar.</p>
+        </div>
+        <div class="step-card">
+          <div class="icon-tile"><svg class="icon"><use href="#i-users"/></svg></div>
+          <p class="step-label">Schritt 3</p>
+          <h3>Bewusst teilen</h3>
+          <p>Erst wenn du willst, landet ein Gedanke im gemeinsamen Familienstapel — zum Zuweisen und Erledigen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="landing-section tint">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Warum Duonest</span>
+        <h2>Anders als alles, was mitzählt</h2>
+      </div>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="icon-tile" style="background:rgba(107,127,94,.12);color:var(--sage);"><svg class="icon"><use href="#i-wifi-off"/></svg></div>
+          <h3>Local-first</h3>
+          <p>Voll funktionsfähig offline. Deine Einträge gehören zuerst deinem Gerät — Sync passiert im Hintergrund.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon-tile" style="background:rgba(122,147,168,.16);color:var(--slate);"><svg class="icon"><use href="#i-shield-check"/></svg></div>
+          <h3>Echt verschlüsselt</h3>
+          <p>Verschlüsselung bei Übertragung und Speicherung. Server in Frankfurt, DSGVO-konform.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon-tile" style="background:rgba(212,165,116,.18);color:var(--sand-600);"><svg class="icon"><use href="#i-heart"/></svg></div>
+          <h3>Bewertungsfrei</h3>
+          <p>Keine Streaks, keine Punkte, kein Fairness-Ranking. Teilen soll entlasten, nicht Druck machen.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon-tile" style="background:rgba(139,127,168,.16);color:var(--plum);"><svg class="icon"><use href="#i-lock"/></svg></div>
+          <h3>Privat zuerst</h3>
+          <p>Gedanken werden erst privat erfasst und sortiert. Nichts wird geteilt, bevor du es bewusst freigibst.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon-tile" style="background:rgba(107,127,94,.12);color:var(--sage);"><svg class="icon"><use href="#i-mic"/></svg></div>
+          <h3>Voice-first</h3>
+          <p>Sprechen ist schneller als tippen. On-Device-Transkription in Deutsch und Englisch.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon-tile" style="background:rgba(122,148,113,.18);color:var(--success);"><svg class="icon"><use href="#i-leaf"/></svg></div>
+          <h3>Ruhig gestaltet</h3>
+          <p>Warm, weich, reduziert. Eine App, die den Kopf leichter macht — nicht voller.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTI-GAMIFICATION BAND -->
+  <section class="band">
+    <div class="wrap">
+      <span class="eyebrow">Die Tonalität</span>
+      <p class="strike">„Glückwunsch! 5 Aufgaben erledigt! Streak: 3 Tage!“</p>
+      <p class="payoff">Sondern einfach:<br>„5 Dinge sind jetzt vom Tisch.“</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="landing-section" id="preise">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Preise</span>
+        <h2>Solo kostenlos. Familie ab 4,99&nbsp;€.</h2>
+        <p>Teilen startet mit 14 Tagen kostenlos. Jederzeit kündbar.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Free</h3>
+          <p class="price">0&nbsp;€</p>
+          <p class="period">für immer</p>
+          <hr>
+          <ul>
+            <li><svg class="icon"><use href="#i-check"/></svg>Solo, privater Stapel</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Sprache &amp; Text</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>50 aktive Einträge</li>
+          </ul>
+          <a class="btn btn-secondary" href="#" style="width:100%;margin-top:20px;">Loslegen</a>
+        </div>
+        <div class="price-card featured">
+          <span class="tag">EMPFOHLEN</span>
+          <h3>Couple</h3>
+          <p class="price">4,99&nbsp;€</p>
+          <p class="period">pro Monat</p>
+          <hr>
+          <ul>
+            <li><svg class="icon"><use href="#i-check"/></svg>2 Mitglieder</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Geteilter Stapel</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>3 eigene Typen</li>
+          </ul>
+          <a class="btn btn-primary" href="#" style="width:100%;margin-top:20px;">14 Tage gratis</a>
+        </div>
+        <div class="price-card">
+          <h3>Family</h3>
+          <p class="price">7,99&nbsp;€</p>
+          <p class="period">pro Monat</p>
+          <hr>
+          <ul>
+            <li><svg class="icon"><use href="#i-check"/></svg>Bis 5 Mitglieder</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>5 eigene Typen</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Audio bleibt lokal</li>
+          </ul>
+          <a class="btn btn-secondary" href="#" style="width:100%;margin-top:20px;">14 Tage gratis</a>
+        </div>
+        <div class="price-card">
+          <h3>Extended</h3>
+          <p class="price">12,99&nbsp;€</p>
+          <p class="period">pro Monat</p>
+          <hr>
+          <ul>
+            <li><svg class="icon"><use href="#i-check"/></svg>Bis 10 Mitglieder</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>10 eigene Typen</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>WG &amp; Pflegeteams</li>
+          </ul>
+          <a class="btn btn-secondary" href="#" style="width:100%;margin-top:20px;">14 Tage gratis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR PROFESSIONALS -->
+  <section class="landing-section tint" id="fachleute">
+    <div class="wrap">
+      <div class="pro-card">
+        <div class="copy">
+          <span class="eyebrow" style="color:var(--sage);">Für Fachleute</span>
+          <h2>Empfehlen Sie Duonest in Ihrer Praxis</h2>
+          <p>Paar- und Familienberater:innen sowie Therapeut:innen begleiten viele Paare beim Thema mentale Last. Duonest ist ein ruhiges, bewertungsfreies Werkzeug für den Alltag zwischen den Sitzungen — kein Therapie- oder Diagnose-Tool.</p>
+        </div>
+        <div class="action">
+          <a class="btn btn-primary" href="mailto:hallo@duonest.de?subject=Infomaterial%20f%C3%BCr%20Fachleute"><svg class="icon"><use href="#i-mail"/></svg>Infomaterial anfordern</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="landing-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Häufige Fragen</span>
+        <h2>Gut zu wissen</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>Bleiben meine Einträge wirklich privat?
+            <svg class="icon icon-plus"><use href="#i-plus"/></svg>
+            <svg class="icon icon-minus"><use href="#i-minus"/></svg>
+          </summary>
+          <p>Ja. Ein Eintrag bekommt technisch erst dann eine Familien-Zuordnung, wenn du ihn bewusst teilst. Vorher ist er strukturell gar nicht mit deiner Familie verknüpft.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Funktioniert Duonest offline?
+            <svg class="icon icon-plus"><use href="#i-plus"/></svg>
+            <svg class="icon icon-minus"><use href="#i-minus"/></svg>
+          </summary>
+          <p>Ja, durchgehend. Duonest ist local-first gebaut: Erfassen, Sortieren und Lesen funktionieren komplett ohne Internetverbindung. Sobald du wieder online bist, synchronisiert die App im Hintergrund — du merkst davon nichts.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Werden meine Sprachmemos in die Cloud geschickt?
+            <svg class="icon icon-plus"><use href="#i-plus"/></svg>
+            <svg class="icon icon-minus"><use href="#i-minus"/></svg>
+          </summary>
+          <p>Nein. Sprachaufnahmen verlassen bewusst nie dein Gerät — sie werden ausschließlich lokal zur Transkription genutzt und danach automatisch gelöscht. Nur der daraus erkannte Text wird synchronisiert, nicht die Aufnahme selbst.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Kann ich das Abo jederzeit kündigen?
+            <svg class="icon icon-plus"><use href="#i-plus"/></svg>
+            <svg class="icon icon-minus"><use href="#i-minus"/></svg>
+          </summary>
+          <p>Ja, jederzeit über die Konto-Einstellungen im App Store bzw. bei Google Play — da die Zahlungsabwicklung dort läuft, auch die Kündigung. Dein Zugriff bleibt bis zum Ende der bereits bezahlten Laufzeit bestehen.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="landing-section final-cta">
+    <div class="wrap">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <g transform="translate(0,4)">
+          <g transform="translate(2,12) rotate(-12 13 13)"><path d="M16,0 H19 A7,7 0 0 1 26,7 V19 A7,7 0 0 1 19,26 H7 A7,7 0 0 1 0,19 V16 A16,16 0 0 1 16,0 Z" fill="var(--sage-logo)"/></g>
+          <g transform="translate(12,2) rotate(12 13 13)"><path class="logo-blend" d="M16,0 H19 A7,7 0 0 1 26,7 V19 A7,7 0 0 1 19,26 H7 A7,7 0 0 1 0,19 V16 A16,16 0 0 1 16,0 Z" fill="var(--sand)"/></g>
+        </g>
+      </svg>
+      <h2>Schaff Platz im Kopf.</h2>
+      <p>Fang heute allein an — kostenlos. Die Familie kommt dazu, wenn du bereit bist.</p>
+      <a class="btn btn-primary" href="#preise">Kostenlos starten</a>
+    </div>
+  </section>
+
 </main>
 
-<footer>
-  <span>© 2026 Mario Mangold</span>
-  <a href="/impressum/">Impressum</a>
-  <a href="/datenschutz/">Datenschutz</a>
-  <span class="spacer"></span>
+<footer class="landing-footer">
+  <div class="wrap">
+    <div class="about">
+      <a class="wordmark" href="/">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <g transform="translate(0,4)">
+            <g transform="translate(2,12) rotate(-12 13 13)"><path d="M16,0 H19 A7,7 0 0 1 26,7 V19 A7,7 0 0 1 19,26 H7 A7,7 0 0 1 0,19 V16 A16,16 0 0 1 16,0 Z" fill="var(--sage-logo)"/></g>
+            <g transform="translate(12,2) rotate(12 13 13)"><path class="logo-blend" d="M16,0 H19 A7,7 0 0 1 26,7 V19 A7,7 0 0 1 19,26 H7 A7,7 0 0 1 0,19 V16 A16,16 0 0 1 16,0 Z" fill="var(--sand)"/></g>
+          </g>
+        </svg>
+        duonest
+      </a>
+      <p>Mentale Last, ruhig geteilt. Made in DACH · Server in Frankfurt.</p>
+    </div>
+    <div class="cols">
+      <div class="col">
+        <span class="head">Produkt</span>
+        <a href="#wie-es-funktioniert">Wie es funktioniert</a>
+        <a href="#preise">Preise</a>
+        <a href="#fachleute">Für Fachleute</a>
+      </div>
+      <div class="col">
+        <span class="head">Rechtliches</span>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+      </div>
+      <div class="col">
+        <span class="head">Kontakt</span>
+        <a href="mailto:hallo@duonest.de">hallo@duonest.de</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 </body>
