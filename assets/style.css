@@ -425,18 +425,50 @@ footer .spacer {
 
 /* Phone mock */
 
-.phone {
+.phone-frame {
   flex: none;
-  width: 280px;
-  height: 560px;
+  width: 300px;
+  height: 612px;
+  padding: 14px;
+  background: linear-gradient(165deg, #3a3b35, #1c1d19);
+  border-radius: 52px;
+  box-shadow:
+    0 40px 80px -30px rgba(42, 43, 38, 0.45),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.phone-frame::before {
+  /* Seitentaste, rein dekorativ */
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: 130px;
+  width: 3px;
+  height: 70px;
+  background: #171815;
+  border-radius: 0 2px 2px 0;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
   background: var(--surface);
-  border-radius: 38px;
-  box-shadow: 0 40px 80px -30px rgba(42, 43, 38, 0.35);
-  border: 1px solid var(--border-soft);
+  border-radius: 40px;
   overflow: hidden;
   position: relative;
-  display: flex;
-  flex-direction: column;
+}
+
+.phone-island {
+  position: absolute;
+  left: 50%;
+  top: 22px;
+  transform: translateX(-50%);
+  width: 84px;
+  height: 24px;
+  border-radius: 999px;
+  background: #171815;
+  z-index: 2;
 }
 
 .phone-shot {
@@ -912,9 +944,11 @@ footer .spacer {
     font-size: 38px;
   }
 
-  .phone {
+  .phone-frame {
     width: 100%;
     max-width: 320px;
+    height: auto;
+    aspect-ratio: 300 / 612;
     margin: 0 auto;
   }
 
