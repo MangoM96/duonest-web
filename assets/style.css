@@ -619,6 +619,12 @@ footer .spacer {
   display: flex;
   align-items: center;
   gap: 56px;
+}
+
+/* Nur wenn der Split auf anderen Inhalt im selben Abschnitt folgt (z. B.
+   nach dem Schritt-Grid) -- als eigenständiger Abschnitt braucht er keine
+   Trennlinie zu nichts. */
+.feature-split.with-divider {
   margin-top: 56px;
   padding-top: 56px;
   border-top: 1px solid var(--border-soft);
