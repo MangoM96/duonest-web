@@ -458,7 +458,10 @@ footer .spacer {
   top: 1.875%;
   width: 90.54%;
   height: 96.25%;
-  background: var(--bg);
+  /* Fest hell statt var(--bg) -- der Screenshot ist immer im Hellmodus der
+     App, unabhängig vom Theme dieser Website. Im Dark Mode der Seite würde
+     var(--bg) sonst einen dunklen Rand um den hellen Screenshot ziehen. */
+  background: #FAF8F5;
   border-radius: 10cqw;
   overflow: hidden;
   display: flex;
@@ -479,13 +482,15 @@ footer .spacer {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 4.64cqw;
-  color: var(--ink);
+  /* Fest dunkel statt var(--ink), siehe .phone-screen -- der Screenshot
+     ist immer hell, unabhängig vom Theme dieser Website. */
+  color: #3D3D38;
 }
 
 .phone-battery {
   width: 7.14cqw;
   height: 3.57cqw;
-  border: 0.43cqw solid var(--ink);
+  border: 0.43cqw solid #3D3D38;
   border-radius: 0.9cqw;
   position: relative;
   opacity: 0.85;
@@ -496,7 +501,7 @@ footer .spacer {
   position: absolute;
   inset: 0.46cqw;
   right: 1.07cqw;
-  background: var(--ink);
+  background: #3D3D38;
   border-radius: 0.36cqw;
 }
 
@@ -507,7 +512,7 @@ footer .spacer {
   top: 1.07cqw;
   width: 0.46cqw;
   height: 1.43cqw;
-  background: var(--ink);
+  background: #3D3D38;
   opacity: 0.85;
   border-radius: 0 1px 1px 0;
 }
