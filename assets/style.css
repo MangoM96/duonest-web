@@ -613,6 +613,68 @@ footer .spacer {
   margin: 10px 0 0;
 }
 
+/* Feature split (Schritt 3 live: Familienstapel-Screenshot + Copy) */
+
+.feature-split {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  margin-top: 56px;
+  padding-top: 56px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.feature-split .phone-frame {
+  width: 260px;
+}
+
+.feature-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.feature-copy h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: -0.3px;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.feature-copy > p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 14px 0 0;
+}
+
+.feature-list {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.feature-list .icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  color: var(--plum);
+}
+
 /* Values grid */
 
 .value-grid {
@@ -1000,6 +1062,29 @@ footer .spacer {
   .step-grid,
   .value-grid {
     grid-template-columns: 1fr;
+  }
+
+  .feature-split {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .feature-split .phone-frame {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .feature-copy h3,
+  .feature-copy > p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .feature-list {
+    align-items: center;
   }
 
   .price-grid {
