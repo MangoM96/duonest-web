@@ -577,6 +577,14 @@ footer .spacer {
   font-size: 24px;
 }
 
+/* --sage/--sand-600 sind fuer Buttons/Badges getunt und bleiben dort bewusst
+   unveraendert im Dark Mode -- als Icon-Vordergrundfarbe auf einer nur
+   leicht getoenten dunklen Kachel wirken sie dort aber zu dunkel/matt
+   (kein ausreichender Kontrast). Eigene Modifier-Klassen statt die
+   globalen Tokens umzubiegen, damit Buttons/Badges unangetastet bleiben. */
+.icon-tile--sage { color: var(--sage); }
+.icon-tile--sand { color: var(--sand-600); }
+
 .step-card .icon-tile {
   background: rgba(107, 127, 94, 0.12);
   color: var(--sage);
@@ -1179,5 +1187,13 @@ footer .spacer {
   .btn-primary:hover {
     background: var(--sage);
     opacity: 0.9;
+  }
+
+  .icon-tile--sage {
+    color: #8CA07D;
+  }
+
+  .icon-tile--sand {
+    color: #E0B689;
   }
 }
